@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Change Password</title>
 </head>
-<body>
+<body class="bg-light">
     <header>
         <nav class="navbar bg-primary navbar-expand-lg shadow-sm sticky-top">
             <div class="container-fluid">
@@ -95,11 +95,11 @@
     </header>
 
     {{-- Awal Content --}}
-    <div class="content px-4 py-2 bg-light vh-100">
+    <div class="content px-4 py-2 bg-light">
         <div class="container pt-3 bg-white shadow-sm py-5 mt-3">
             <div class="passwordTab">
                 <div class="col-12 d-flex justify-content-between">
-                    <div class="informasi col-12 col-sm-8 mx-auto">
+                    <div class="informasi col-12 col-md-8 mx-auto">
                         <h3><b>Settings</b></h3>
                         <p>Change Password</p>
                         <div class="container-fluid mt-4 col-12">
@@ -113,39 +113,51 @@
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active py-3" id="dataPersonal" role="tabpanel" aria-labelledby="dataPersonal-tab">
-                                    <div class="judul px-5">
-                                        <h5><b>Change Password Payslip PDF</b></h5>
-                                    </div>
-                                    <div class="currentPassword px-5">
-                                        <label for="currentPayslip" class="mb-1">Input Your Current Payslip Password</label>
-                                        <input type="text" name="currentPayslip" class="form-control mb-2" placeholder="Current password" id="currentPayslip">
-                                    </div>
-                                    <div class="newPassword px-5">
-                                        <label for="newPayslip" class="mb-1">Input Your New Payslip Password</label>
-                                        <input type="text" name="newPayslip" class="form-control mb-2" placeholder="New password" id="newPayslip">
-                                    </div>
-                                    <div class="retypePassword px-5">
-                                        <label for="retypePayslip" class="mb-1">Re-type Your New Payslip Password</label>
-                                        <input type="text" name="retypePayslip" class="form-control mb-2" placeholder="Retype password" id="retypePayslip">
-                                    </div>
+                                    <form action="#">
+                                        <div class="judul px-md-5">
+                                            <h5><b>Change Password Payslip PDF</b></h5>
+                                        </div>
+                                        <div class="currentPassword px-md-5">
+                                            <label for="currentPayslip" class="mb-1">Input Your Current Payslip Password</label>
+                                            <input type="text" name="currentPayslip" class="form-control mb-2" placeholder="Current password" id="currentPayslip">
+                                        </div>
+                                        <div class="newPassword px-md-5">
+                                            <label for="newPayslip" class="mb-1">Input Your New Payslip Password</label>
+                                            <input type="text" name="newPayslip" class="form-control mb-2" placeholder="New password" id="newPayslip">
+                                        </div>
+                                        <div class="retypePassword px-md-5">
+                                            <label for="retypePayslip" class="mb-1">Re-type Your New Payslip Password</label>
+                                            <input type="text" name="retypePayslip" class="form-control mb-2" placeholder="Retype password" id="retypePayslip">
+                                        </div>
+                                        <div class="buttonSubmit d-flex mt-5 justify-content-end">
+                                            <button type="reset" class="btn btn-light me-3">Reset</button>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
                                 </div>
 
                                 <div class="tab-pane fade py-3" id="dataKaryawan" role="tabpanel" aria-labelledby="dataKaryawan-tab">
-                                    <div class="judul px-5">
-                                        <h5><b>Change Password Account</b></h5>
-                                    </div>
-                                    <div class="currentPassword px-5">
-                                        <label for="currentPassowrd" class="mb-1">Input Your Current Password Account</label>
-                                        <input type="text" name="currentPassword" class="form-control mb-2" placeholder="Current password" id="currentPassword">
-                                    </div>
-                                    <div class="newPassword px-5">
-                                        <label for="newPassword" class="mb-1">Input Your New Password Account</label>
-                                        <input type="text" name="newPassword" class="form-control mb-2" placeholder="New password" id="newPassword">
-                                    </div>
-                                    <div class="retypePassword px-5">
-                                        <label for="retypePassword" class="mb-1">Re-type Your New Password Account</label>
-                                        <input type="text" name="retypePassword" class="form-control mb-2" placeholder="Retype password" id="retypePassword">
-                                    </div>
+                                    <form action="#">
+                                        <div class="judul px-md-5">
+                                            <h5><b>Change Password Account</b></h5>
+                                        </div>
+                                        <div class="currentPassword px-md-5">
+                                            <label for="currentPassowrd" class="mb-1">Input Your Current Password Account</label>
+                                            <input type="text" name="currentPassword" class="form-control mb-2" placeholder="Current password" id="currentPassword">
+                                        </div>
+                                        <div class="newPassword px-md-5">
+                                            <label for="newPassword" class="mb-1">Input Your New Password Account</label>
+                                            <input type="text" name="newPassword" class="form-control mb-2" placeholder="New password" id="newPassword">
+                                        </div>
+                                        <div class="retypePassword px-md-5">
+                                            <label for="retypePassword" class="mb-1">Re-type Your New Password Account</label>
+                                            <input type="text" name="retypePassword" class="form-control mb-2" placeholder="Retype password" id="retypePassword">
+                                        </div>
+                                        <div class="buttonSubmit d-flex mt-5 justify-content-end">
+                                            <button type="reset" class="btn btn-light me-3">Reset</button>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
