@@ -219,8 +219,6 @@
                 ]
             });
 
-            $('#example thead th:last-child').removeClass('sorting_asc sorting_desc sorting');
-
             $('#searchInput').keyup(function() {
                 table.search(this.value).draw();
             });
