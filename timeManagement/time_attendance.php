@@ -135,11 +135,6 @@
                       Employee transfer
                     </button>
                   </div>
-                <div>
-                    <button class="btn bg-primary shadow-sm text-white" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Attendance Report
-                    </button>
-                </div>
             </div>
         </div>
 
