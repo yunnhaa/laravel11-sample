@@ -156,6 +156,18 @@
           object-position: center center;
       }
 
+      .file-container {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      }
+      .file-container img, .file-container iframe {
+            max-width: 100%;
+            max-height: 100%;
+      }
     </style>
 </head>
 <body>
@@ -253,9 +265,9 @@
           <div id="generalEmploymentInclude" style="display: none;">
             @include('kar_employment')
           </div>
-          {{-- <div id="generalEducation" style="display: none;">
-            @include('kar_employment')
-          </div> --}}
+          <div id="generalSertifikatInclude" style="display: none;">
+            @include('kar_sertifikat')
+          </div>
           <div id="generalAdditionalInclude" style="display: none;">
             @include('kar_additionalinfo')
           </div>
@@ -378,11 +390,13 @@
 
 
       var employmentLink = document.getElementById('generalEmployment');
-var employmentDiv = document.getElementById('generalEmploymentInclude');
-var personalLink = document.getElementById('generalPersonal');
-var personalDiv = document.getElementById('generalPersonalInclude');
-var additionalInfoLink = document.getElementById('generalAdditionalInfo');
-var additionalInfoDiv = document.getElementById('generalAdditionalInclude');
+      var employmentDiv = document.getElementById('generalEmploymentInclude');
+      var personalLink = document.getElementById('generalPersonal');
+      var personalDiv = document.getElementById('generalPersonalInclude');
+      var additionalInfoLink = document.getElementById('generalAdditionalInfo');
+      var additionalInfoDiv = document.getElementById('generalAdditionalInclude');
+      var sertifikatLink = document.getElementById('generalSertifikat');
+      var sertifikatDiv = document.getElementById('generalSertifikatInclude');
 
 // Menambahkan event listener untuk klik pada personalLink
 personalLink.addEventListener('click', function() {
@@ -391,10 +405,12 @@ personalLink.addEventListener('click', function() {
 
   // Menyembunyikan employmentDiv jika ada
   employmentDiv.style.display = 'none';
+  additionalInfoDiv.style.display = 'none';
 
   // Mengembalikan tampilan link employment ke normal
   employmentLink.style.fontWeight = 'normal';
   additionalInfoLink.style.fontWeight = 'normal';
+  sertifikatLink.style.fontWeight = 'normal';
   
   // Mengatur tampilan link personal menjadi bold
   personalLink.style.fontWeight ='bold';
@@ -407,10 +423,13 @@ employmentLink.addEventListener('click', function() {
 
   // Menyembunyikan personalDiv jika ada
   personalDiv.style.display = 'none';
+  additionalInfoDiv.style.display = 'none';
+  sertifikatDiv.style.display = 'none';
 
   // Mengembalikan tampilan link personal ke normal
   personalLink.style.fontWeight = 'normal';
   additionalInfoLink.style.fontWeight = 'normal';
+  sertifikatLink.style.fontWeight = 'normal';
   
   // Mengatur tampilan link employment menjadi bold
   employmentLink.style.fontWeight = 'bold';
@@ -423,15 +442,76 @@ additionalInfoLink.addEventListener('click', function() {
   // Menyembunyikan employmentDiv dan personalDiv jika ada
   employmentDiv.style.display = 'none';
   personalDiv.style.display = 'none';
+  sertifikatDiv.style.display = 'none';
   
   // Mengembalikan tampilan link employment dan personal ke normal
   employmentLink.style.fontWeight = 'normal';
   personalLink.style.fontWeight = 'normal';
+  sertifikatLink.style.fontWeight = 'normal';
   
   // Mengatur tampilan link additionalInfo menjadi bold
   additionalInfoLink.style.fontWeight = 'bold';
 });
 
+sertifikatLink.addEventListener('click', function() {
+  // Mengubah display dari additionalInfoDiv menjadi block saat link di-klik
+  sertifikatDiv.style.display = 'block';
+
+  // Menyembunyikan employmentDiv dan personalDiv jika ada
+  employmentDiv.style.display = 'none';
+  personalDiv.style.display = 'none';
+  additionalInfoDiv.style.display = 'none';
+  
+  // Mengembalikan tampilan link employment dan personal ke normal
+  employmentLink.style.fontWeight = 'normal';
+  personalLink.style.fontWeight = 'normal';
+  additionalInfoLink.style.fontWeight = 'normal';
+  
+  // Mengatur tampilan link additionalInfo menjadi bold
+  sertifikatLink.style.fontWeight = 'bold';
+});
+
+
+function displayFile(fileUrl) {
+            const fileContainer = document.getElementById('fileContainer');
+            const fileExtension = fileUrl.split('.').pop().toLowerCase();
+            const buttonFileSertifikat = document.getElementById('sertifikatFile');
+
+            if (fileExtension === 'pdf') {
+                const iframe = document.createElement('iframe');
+                iframe.src = fileUrl;
+                iframe.width = '100%';
+                iframe.height = '100%';
+                fileContainer.appendChild(iframe);
+                buttonFileSertifikat.style.display = 'none';
+            } else if (['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg'].includes(fileExtension)) {
+                const img = document.createElement('img');
+                img.src = fileUrl;
+                img.alt = 'File Image';
+                img.classList.add('object-fit-cover', 'border', 'rounded');
+                fileContainer.appendChild(img);
+            } else {
+                fileContainer.innerHTML = 'Unsupported file type';
+            }
+        }
+
+        // Ini kalau file PDF
+        // displayFile('sertifikat/Sertifikat.pdf');
+
+        // ini kalau file png
+        displayFile('sertifikat/sertifikat1.png');
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+        var downloadLink = document.getElementById('downloadLink');
+        var fileName = downloadLink.getAttribute('href').split('/').pop();
+        document.getElementById('fileName').textContent = fileName;
+    });
+
+
+
+
+    
     </script>
 
     </body>
