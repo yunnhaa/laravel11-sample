@@ -13,6 +13,7 @@
     </button>
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" href="#">Foto Profil</a></li>
+      <li><a class="dropdown-item" href="changePasswordProfil">Ubah Password</a></li>
     </ul>
   </div>
 </div>
@@ -24,7 +25,7 @@
       <ul type="none" class="menu-dropdown-general">
         <li class="pt-2"><a href="#" class="text-decoration-none text-black" id="generalPersonal" style="font-weight: bold;">Personal</a></li>
         <li class="pt-3"><a href="#" class="text-decoration-none text-black" id="generalEmployment">Employment</a></li>
-        <li class="pt-3"><a href="#" class="text-decoration-none text-black">Education & Experience</a></li>
+        <li class="pt-3"><a href="#" class="text-decoration-none text-black" id="generalSertifikat">Sertifikat</a></li>
         <li class="pt-3 pb-3"><a href="#" class="text-decoration-none text-black" id="generalAdditionalInfo">Additional Info</a></li>
       </ul>
     </ul>
